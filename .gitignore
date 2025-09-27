@@ -1,0 +1,61 @@
+node_modules# ========================
+# Environment & Secrets
+# ========================
+.env                # Main environment file
+.env.local          # Local development overrides
+.env.*              # All other env variants (e.g., .env.prod, .env.test)
+!.env.example       # Keep this tracked as a template
+secrets/            # Folder for credential files
+*.key               # Private keys
+*.pem
+*.crt
+
+# ========================
+# Dependency Directories
+# ========================
+node_modules       # NPM packages (never commit this!)
+jspm_packages/
+.pnpm-store/
+
+# ========================
+# Logs & Runtime
+# ========================
+logs                # Custom log directory
+*.log               # Log files
+npm-debug.log*      # NPM debug logs
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.pid               # Process IDs
+.forever/           # Forever.js logs
+
+# ========================
+# Build & Output
+# ========================
+dist/               # Compiled output (if using TypeScript/Babel)
+build/              # Common build directory
+coverage/           # Test coverage reports
+.nyc_output/        # Istanbul coverage data
+
+# ========================
+# Cache & Temp Files
+# ========================
+.cache/             # Parcel, Babel, etc.
+.temp/              # Temporary files
+*.tmp               # OS/system temp files
+
+# ========================
+# Editor & IDE
+# ========================
+.vscode/            # VSCode settings
+!.vscode/extensions.json  # (Optional: Share extensions)
+.idea/              # JetBrains IDE
+.DS_Store           # macOS metadata
+*.swp               # Vim swap files
+
+# ========================
+# Misc
+# ========================
+.env.production     # (Optional: Ignore production env)
+.env.development    # (Optional: Ignore dev env)
+dump.rdb            # Redis database backup
