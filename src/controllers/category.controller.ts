@@ -85,3 +85,18 @@ export const updateCategory = async (
       .json({ message: "Internal server error", err: error.message });
   }
 };
+
+export const deleteCategory = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const categoryId = req.params.categoryId;
+    const category = await Category.deleteOne({ _id: categoryId });
+    res.json({ message: "Category deleted", success: true, category });
+  } catch (error: any) {
+    res
+      .status(500)
+      .json({ message: "Internal server error", err: error.message });
+  }
+}

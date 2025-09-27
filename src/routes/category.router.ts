@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createCategory,
+  deleteCategory,
   getCategoriesByFilter,
   updateCategory,
 } from "../controllers/category.controller";
@@ -15,5 +16,6 @@ categoryRouter.put(
   upload("categories").single("image"),
   updateCategory
 );
+categoryRouter.delete("/:categoryId", deleteCategory);
 
 export default categoryRouter;
