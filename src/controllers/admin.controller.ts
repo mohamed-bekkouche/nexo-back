@@ -459,3 +459,25 @@ function fillMissingMonths(data: any[], startDate: Date, endDate: Date) {
 
   return filledData;
 }
+ 
+
+export const deleteStaffMember = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { staffId } = req.params;
+    const staff = await User.deleteOne({ _id: staffId });
+    if (!staff) {
+      res.status(404).json({ message: "Staff not found" });
+      return;
+    }
+    res.status(200).json({
+      message: `Staff is deleted`,
+    });
+  } catch (error: any) {
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: error.message });
+  }
+};
