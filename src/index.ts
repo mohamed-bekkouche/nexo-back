@@ -35,6 +35,7 @@ const allowedOrigins = [
   process.env.ADMIN_ORIGIN ?? "",
   process.env.PROD_CLIENT_ORIGIN ?? "https://<your-client>.vercel.app",
   process.env.PROD_ADMIN_ORIGIN ?? "https://<your-admin>.vercel.app",
+  "http://localhost:3000",
 ];
 
 app.use(
